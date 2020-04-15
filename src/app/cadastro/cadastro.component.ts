@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Postagem } from '../models/postagem.model';
 import { PostagensService } from '../services/postagens.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -10,23 +13,33 @@ import { PostagensService } from '../services/postagens.service';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private postagensService: PostagensService) { }
+  formulario = new FormGroup({
+    conteudo: new FormControl(null, [Validators.required]),
+  });
+
+  constructor(
+    private postagensService: PostagensService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
 
-  cadastrarNovoPost(){
+  async enviar() {
 
-    const postagem: Postagem = {
-      conteudo: 'testando a requisição do POST',
-      data: new Date(),
-      dislikes: 0,
-      likes: 1
-    };
+    if(this.formulario.invalid){
+      return;
+    }
 
-    this.postagensService.salvar(postagem);
+    let postagem: Postagem = this.formulario.value;
 
-    
+    postagem.data = new Date();
+    postagem.likes = 0;
+    postagem.dislikes = 0;
+
+    postagem = await this.postagensService.salvar(postagem);
+
+    this.router.navigate(['home']);
 
   }
 
