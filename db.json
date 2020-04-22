@@ -1,39 +1,11 @@
 {
   "postagens": [
     {
-      "conteudo": "123",
-      "data": "2020-04-15T22:25:20.103Z",
+      "conteudo": "Tangamandapio",
+      "data": "2020-04-22T23:11:36.345Z",
       "likes": 0,
       "dislikes": 0,
       "id": 1
-    },
-    {
-      "conteudo": "aaaaa",
-      "data": "2020-04-15T22:47:18.274Z",
-      "likes": 0,
-      "dislikes": 0,
-      "id": 2
-    },
-    {
-      "conteudo": "aaaaa",
-      "data": "2020-04-15T22:47:46.220Z",
-      "likes": 0,
-      "dislikes": 0,
-      "id": 3
-    },
-    {
-      "conteudo": "Eae",
-      "data": "2020-04-15T23:14:22.274Z",
-      "likes": 0,
-      "dislikes": 0,
-      "id": 4
-    },
-    {
-      "conteudo": "novo",
-      "data": "2020-04-15T23:15:14.092Z",
-      "likes": 0,
-      "dislikes": 0,
-      "id": 5
     }
   ]
 }

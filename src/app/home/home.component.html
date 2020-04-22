@@ -5,6 +5,16 @@
 
 <div *ngFor="let postagem of postagens">
     <p>{{postagem.conteudo}}</p>
-    <button>Editar</button>
+    <p>Gostou: {{postagem.likes}}</p>
+    <p>Não Gostou: {{postagem.dislikes}}</p>
+    
+
+    <button (click)="gostei(postagem)">Gostei</button>
+    <button (click)="naoGostei(postagem)">Não Gostei</button>
+
+    <br><br>
+    <button (click)="editar(postagem)">Editar</button>
     <button (click)="verDetalhes(postagem)">Detalhes</button>
+
+    <br><br><br>
 </div>

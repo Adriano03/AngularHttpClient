@@ -23,4 +23,9 @@ export class DetalhesComponent implements OnInit {
     this.postagem = await this.postagensService.retornarPostagem(idPostagem);
   }
 
+  async apagar(){
+    await this.postagensService.apagar(this.postagem.id);
+    this.router.navigate(['home']);
+  }
+
 }

@@ -30,4 +30,21 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['postagens', postagem.id]);
   }
 
+  editar(postagem: Postagem){
+       this.router.navigate(['postagens', postagem.id, 'editar']);
+  }
+
+
+  async gostei(postagem: Postagem){
+    postagem.likes++;
+
+    await this.postagensService.atualizar(postagem);
+  }
+
+  async naoGostei(postagem: Postagem){
+    postagem.dislikes++;
+
+    await this.postagensService.atualizar(postagem);
+  }
+
 }

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'postagens/:id/edicao', component: EdicaoComponent },
+  { path: 'postagens/:id/editar', component: EdicaoComponent },
   { path: 'postagens/:id', component: DetalhesComponent },
 
 ];
